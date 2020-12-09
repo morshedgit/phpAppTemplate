@@ -46,8 +46,8 @@ class Product
         $this->location = htmlspecialchars(strip_tags($this->location));
 
         $this->id??10;
-        $this->name??'Fork';
-        $this->location??'A4';
+        $this->name??"Fork";
+        $this->location??"A4";
         $this->width??10;
         $this->length??10;
         $this->height??10;
