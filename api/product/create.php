@@ -17,8 +17,10 @@ $product = new Product($db);
 //Product Query
 $result = $product->create($_POST);
 //Get row count
+$data = json_decode(file_get_contents('php://input'), true);
+
 echo json_encode(
-    array('data'=>'No data')
+    $data
 );
 // $num = $result->rowCount();
 
