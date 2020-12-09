@@ -18,7 +18,6 @@ $product = new Product($db);
 //Get the raw posted data
 $data = json_decode(file_get_contents('php://input'), false);
 
-// echo json_encode(gettype($data));
 
 $product->id = $data->id;
 $product->name = $data->name;
