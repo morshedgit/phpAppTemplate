@@ -40,7 +40,7 @@
 
             //$stmt->execute();
             //return $stmt;
-            return $product['name'];
+            return $product;
         }
 
     }
