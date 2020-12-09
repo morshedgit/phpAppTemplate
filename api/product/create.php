@@ -29,14 +29,14 @@ $product->weight = $data->weight;
 $product->location = $data->location;
 
 
-// //Create Post
-// if($product->create()){
-//     echo json_encode(
-//         // array('message'=>'Product created')
-//         $product->create()
-//     );
-// }else{
-//     echo json_encode(
-//         array('message'=>'Product not created')
-//     );
-// }
+//Create Post
+if($product->create()){
+    echo json_encode(
+        // array('message'=>'Product created')
+        $product->create()
+    );
+}else{
+    echo json_encode(
+        array('message'=>'Product not created')
+    );
+}
