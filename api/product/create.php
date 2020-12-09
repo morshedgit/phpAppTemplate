@@ -15,7 +15,7 @@ $db = $database->connect();
 $product = new Product($db);
 
 //Product Query
-$result = $product->create($_REQUEST);
+$result = $product->create($_POST);
 //Get row count
 $num = $result->rowCount();
 
