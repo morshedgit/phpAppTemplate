@@ -1,10 +1,10 @@
 <?php
     class Database {
         //DB Params
-        private $host = '';
-        private $db_name = '';
-        private $username = '';
-        private $password = '';
+        private $host = 'us-cdbr-east-02.cleardb.com';
+        private $db_name = 'heroku_ecbceff60760a98';
+        private $username = 'bf3778cfcc1441';
+        private $password = 'c1ab19fe';
         private $conn;
 
         //DB Connect
