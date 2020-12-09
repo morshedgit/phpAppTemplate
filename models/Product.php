@@ -117,7 +117,7 @@ class Product
         "',width=".$this->width.
         ",length=".$this->length.
         ",height=".$this->height.
-        ",weight=".$this->name.
+        ",weight=".$this->weight.
         " WHERE id=".$this->id;
 
         error_log($query);
