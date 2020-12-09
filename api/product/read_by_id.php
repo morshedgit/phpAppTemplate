@@ -23,7 +23,7 @@ $data = json_decode(file_get_contents('php://input'), false);
 $product->id = $data->id;
 
 //Product Query
-$result = $product->read();
+$result = $product->read_one();
 //Get row count
 $num = $result->rowCount();
 
