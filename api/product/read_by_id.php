@@ -39,9 +39,9 @@ if($num >0 ){
             'name'=>$name,
             'location'=>$location,
             'width'=>$width,
-            'length'=>$name,
-            'height'=>$name,
-            'weight'=>$name
+            'length'=>$length,
+            'height'=>$height,
+            'weight'=>$weight
         );
 
         array_push($products_arr['data'],$product_item);

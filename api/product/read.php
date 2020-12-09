@@ -27,7 +27,12 @@ if($num >0 ){
 
         $product_item = array(
             'id'=>$id,
-            'name'=>$name
+            'name'=>$name,
+            'location'=>$location,
+            'width'=>$width,
+            'length'=>$length,
+            'height'=>$height,
+            'weight'=>$weight
         );
 
         array_push($products_arr['data'],$product_item);
