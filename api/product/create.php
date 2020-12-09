@@ -2,7 +2,8 @@
 //Headers
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-header('Access-Control-Allow-Methods: post');
+header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Access-Control-Allow-Origin');
 
 include_once '../../config/Database.php';
 include_once '../../models/Product.php';
@@ -14,39 +15,24 @@ $db = $database->connect();
 //Instantiate product object
 $product = new Product($db);
 
+//Get the raw posted data
 $data = json_decode(file_get_contents('php://input'), true);
 
-echo $data['location'];
+$product->id = $data->id;
+$product->name = $data->name;
+$product->width = $data->width;
+$product->length = $data->length;
+$product->height = $data->height;
+$product->weight = $data->weight;
+$product->location = $data->location;
 
-//Product Query
-// $result = $product->create($data);
-// //Get row count
-
-// // echo json_encode(
-// //     $data
-// // );
-// $num = $result->rowCount();
-
-// if($num >0 ){
-//     $products_arr = array();
-//     $products_arr['data'] = array();
-
-//     while($row = $result->fetch(PDO::FETCH_ASSOC)){
-//         extract($row);
-
-//         $product_item = array(
-//             'id'=>$id,
-//             'name'=>$name
-//         );
-
-//         array_push($products_arr['data'],$product_item);
-//     }
-
-//     echo json_encode($products_arr);
-// }else{
-
-//     echo json_encode(
-//         array('message'=>'No product found')
-//     );
-
-// }
+//Create Post
+if($product->create()){
+    echo json_encode(
+        array('message'=>'Product created')
+    );
+}else{
+    echo json_encode(
+        array('message'=>'Product not created')
+    );
+}
