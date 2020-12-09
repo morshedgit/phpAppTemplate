@@ -14,31 +14,33 @@ $db = $database->connect();
 //Instantiate product object
 $product = new Product($db);
 
+echo json_encode($_REQUEST);
+
 //Product Query
-$result = $product->create($_REQUEST);
-//Get row count
-$num = $result->rowCount();
+// $result = $product->create($_REQUEST);
+// //Get row count
+// $num = $result->rowCount();
 
-if($num >0 ){
-    $products_arr = array();
-    $products_arr['data'] = array();
+// if($num >0 ){
+//     $products_arr = array();
+//     $products_arr['data'] = array();
 
-    while($row = $result->fetch(PDO::FETCH_ASSOC)){
-        extract($row);
+//     while($row = $result->fetch(PDO::FETCH_ASSOC)){
+//         extract($row);
 
-        $product_item = array(
-            'id'=>$id,
-            'name'=>$name
-        );
+//         $product_item = array(
+//             'id'=>$id,
+//             'name'=>$name
+//         );
 
-        array_push($products_arr['data'],$product_item);
-    }
+//         array_push($products_arr['data'],$product_item);
+//     }
 
-    echo json_encode($products_arr);
-}else{
+//     echo json_encode($products_arr);
+// }else{
 
-    echo json_encode(
-        array('message'=>'No product found')
-    );
+//     echo json_encode(
+//         array('message'=>'No product found')
+//     );
 
-}
+// }
