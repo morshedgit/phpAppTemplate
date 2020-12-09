@@ -67,9 +67,9 @@ class Product
         //     VALUES ('.$this->id.','.$this->name.','.$this->location.','.$this->width.','.$this->length.','.$this->height.','.$this->weight.')';
 
         $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (".$this->id.",".$this->name.",".$this->location.",".$this->width.",".$this->length.",".$this->height.",".$this->weight.")";
-
+        return $query;
         //Prepare
-        $stmt = $this->conn->prepare($query);
+        // $stmt = $this->conn->prepare($query);
 
         //Bind data
         // $stmt->bindParams(':name', $this->name);
@@ -81,10 +81,10 @@ class Product
         // $stmt->bindParams(':weight', $this->weight);
 
         //Execute query
-        if ($stmt->execute()) {
-            return true;
-        }
+        // if ($stmt->execute()) {
+        //     return true;
+        // }
 
-        printf("Error: %s.\n", $stmt->error);
+        // printf("Error: %s.\n", $stmt->error);
     }
 }

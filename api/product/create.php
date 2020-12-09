@@ -26,10 +26,12 @@ $product->height = $data->height;
 $product->weight = $data->weight;
 $product->location = $data->location;
 
+
 //Create Post
 if($product->create()){
     echo json_encode(
-        array('message'=>'Product created')
+        // array('message'=>'Product created')
+        $product->create()
     );
 }else{
     echo json_encode(
