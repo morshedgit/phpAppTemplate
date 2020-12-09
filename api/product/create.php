@@ -14,7 +14,7 @@ $db = $database->connect();
 //Instantiate product object
 $product = new Product($db);
 
-echo json_encode($_REQUEST);
+echo json_encode($_POST);
 
 //Product Query
 // $result = $product->create($_REQUEST);
