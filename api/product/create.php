@@ -14,36 +14,37 @@ $db = $database->connect();
 //Instantiate product object
 $product = new Product($db);
 
-//Product Query
-$result = $product->create($_POST);
-//Get row count
 $data = json_decode(file_get_contents('php://input'), true);
 
-echo json_encode(
-    $data
-);
-// $num = $result->rowCount();
+//Product Query
+$result = $product->create($data);
+//Get row count
 
-// if($num >0 ){
-//     $products_arr = array();
-//     $products_arr['data'] = array();
+// echo json_encode(
+//     $data
+// );
+$num = $result->rowCount();
 
-//     while($row = $result->fetch(PDO::FETCH_ASSOC)){
-//         extract($row);
+if($num >0 ){
+    $products_arr = array();
+    $products_arr['data'] = array();
 
-//         $product_item = array(
-//             'id'=>$id,
-//             'name'=>$name
-//         );
+    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+        extract($row);
 
-//         array_push($products_arr['data'],$product_item);
-//     }
+        $product_item = array(
+            'id'=>$id,
+            'name'=>$name
+        );
 
-//     echo json_encode($products_arr);
-// }else{
+        array_push($products_arr['data'],$product_item);
+    }
 
-//     echo json_encode(
-//         array('message'=>'No product found')
-//     );
+    echo json_encode($products_arr);
+}else{
 
-// }
+    echo json_encode(
+        array('message'=>'No product found')
+    );
+
+}
