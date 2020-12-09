@@ -2,7 +2,7 @@
     class Product {
         //DBstuff
         private $conn;
-        private $table = 'products';
+        private $table = 'product';
 
         //Post Properties
         public $id;
