@@ -50,7 +50,9 @@ class Product
     public function create()
     {
 
-
+        if(empty($this->id)){
+            return false;
+        }
         //Clean Data
         $this->id = htmlspecialchars(strip_tags($this->id));
         $this->name = htmlspecialchars(strip_tags($this->name));

@@ -19,8 +19,6 @@ $product = new Product($db);
 $data = json_decode(file_get_contents('php://input'), true);
 
 
-
-
 $product->id = $data->id?$data->id:$data['id'];
 $product->name = $data->name?$data->name:$data['name'];
 $product->width = $data->width?$data->width:$data['width'];
