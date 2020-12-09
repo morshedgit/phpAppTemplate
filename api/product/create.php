@@ -17,7 +17,7 @@ $product = new Product($db);
 //Product Query
 $result = $product->create($_POST);
 //Get row count
-echo json_encode($result);
+echo json_encode($result['name']);
 // $num = $result->rowCount();
 
 // if($num >0 ){
