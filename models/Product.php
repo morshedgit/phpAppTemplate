@@ -66,7 +66,7 @@ class Product
         // $query = 'INSERT INTO ' . $this->table . ' (id,name,location,width,length,height,weight) 
         //     VALUES ('.$this->id.','.$this->name.','.$this->location.','.$this->width.','.$this->length.','.$this->height.','.$this->weight.')';
 
-        $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (".$this->id.","."".$this->name."".","."".$this->location."".",".$this->width.",".$this->length.",".$this->height.",".$this->weight.")";
+        $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (".$this->id.",'".$this->name."','".$this->location."',".$this->width.",".$this->length.",".$this->height.",".$this->weight.")";
         // $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (%,%,%,%,%,%,%)";
         return $query;
         //Prepare
