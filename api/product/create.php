@@ -18,23 +18,25 @@ $product = new Product($db);
 //Get the raw posted data
 $data = json_decode(file_get_contents('php://input'), true);
 
-$product->id = $data->id;
-$product->name = $data->name;
-$product->width = $data->width;
-$product->length = $data->length;
-$product->height = $data->height;
-$product->weight = $data->weight;
-$product->location = $data->location;
+echo json_encode($data);
+
+// $product->id = $data->id;
+// $product->name = $data->name;
+// $product->width = $data->width;
+// $product->length = $data->length;
+// $product->height = $data->height;
+// $product->weight = $data->weight;
+// $product->location = $data->location;
 
 
-//Create Post
-if($product->create()){
-    echo json_encode(
-        // array('message'=>'Product created')
-        $product->create()
-    );
-}else{
-    echo json_encode(
-        array('message'=>'Product not created')
-    );
-}
+// //Create Post
+// if($product->create()){
+//     echo json_encode(
+//         // array('message'=>'Product created')
+//         $product->create()
+//     );
+// }else{
+//     echo json_encode(
+//         array('message'=>'Product not created')
+//     );
+// }
