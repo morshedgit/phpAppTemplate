@@ -61,7 +61,8 @@ class Product
         $this->height = htmlspecialchars(strip_tags($this->height));
         $this->location = htmlspecialchars(strip_tags($this->location));
 
-        $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (".$this->id.",'".$this->name."','".$this->location."',".$this->width.",".$this->length.",".$this->height.",".$this->weight.")";
+        // $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (".$this->id.",'".$this->name."','".$this->location."',".$this->width.",".$this->length.",".$this->height.",".$this->weight.")";
+        $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (1000,'sadeq','home',20,30,40,50)";
         //Prepare
         $stmt = $this->conn->prepare($query);
 
