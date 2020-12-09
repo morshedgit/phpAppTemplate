@@ -18,6 +18,9 @@ $product = new Product($db);
 //Get the raw posted data
 $data = json_decode(file_get_contents('php://input'), true);
 
+echo(gettext($data));
+
+/*
 
 $product->id = $data->id;
 $product->name = $data->name;
@@ -39,3 +42,5 @@ if($product->create()){
         array('message'=>'Product not created')
     );
 }
+
+*/
