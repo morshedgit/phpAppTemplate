@@ -112,9 +112,9 @@ class Product
 
         $query = "UPDATE ".$this->table.
         " SET id=".$this->id.
-        ",name=".$this->name.
-        ",location=".$this->location.
-        ",width=".$this->width.
+        ",name='".$this->name.
+        "',location='".$this->location.
+        "',width=".$this->width.
         ",length=".$this->length.
         ",height=".$this->height.
         ",weight=".$this->name.
