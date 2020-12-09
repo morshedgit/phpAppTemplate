@@ -76,4 +76,28 @@ class Product
 
         printf("Error: %s.\n", $stmt->error);
     }
+
+    //Create product
+    public function delete()
+    {
+
+        if(empty($this->id)){
+            return false;
+        }
+        //Clean Data
+        $this->id = htmlspecialchars(strip_tags($this->id));
+
+        $query = "DELETE FROM ".$this->table." WHERE id=".$this->id;
+
+        error_log($query);
+        //Prepare
+        $stmt = $this->conn->prepare($query);
+
+        //Execute query
+        if ($stmt->execute()) {
+            return true;
+        }
+
+        printf("Error: %s.\n", $stmt->error);
+    }
 }
