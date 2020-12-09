@@ -28,5 +28,18 @@
             $stmt->execute();
             return $stmt;
         }
+        //Get Posts
+        public function create($product){
+            //create query
+            $query = 'INSERT INTO '.$this->table.'
+            (`id`, `weight`, `width`, `length`, `height`, `location`, `name`) VALUES ('.rand(1000,999).','.$product['weight'].' ,'.$product['length'].', '.$product['width'].', '.$product['height'].', '.$product['location'].', '.$product['name'].')';
+
+
+            //Prepare
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->execute();
+            return $stmt;
+        }
 
     }
