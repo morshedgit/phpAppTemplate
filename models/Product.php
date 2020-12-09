@@ -54,8 +54,8 @@ class Product
         $this->weith??10;
 
         if (empty( $this->id ) ) { $this->id = 10;}
-        if (empty( $this->name ) ) { $this->name = 'Fork';}
-        if (empty( $this->location ) ) { $this->location = 'A4';}
+        if (empty( $this->name ) ) { $this->name = "Fork";}
+        if (empty( $this->location ) ) { $this->location = "A4";}
         if (empty( $this->width ) ) { $this->width = 10;}
         if (empty( $this->length ) ) { $this->length = 10;}
         if (empty( $this->height ) ) { $this->height = 10;}
