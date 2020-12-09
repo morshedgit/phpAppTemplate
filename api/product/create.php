@@ -26,7 +26,7 @@ if($data->id){
     $product->length = $data->length?$data->length:$data['length'];
     $product->height = $data->height?$data->height:$data['height'];
     $product->location = $data->location?$data->location:$data['location'];
-    
+    $product->weight = $data->weight?$data->weight:$data['weight'];
     
     //Create Post
     if($product->create()){
