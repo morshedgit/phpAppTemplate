@@ -68,6 +68,8 @@ class Product
         //Execute query
         if ($stmt->execute()) {
             return true;
+        }else{
+            return $query;
         }
 
         printf("Error: %s.\n", $stmt->error);
