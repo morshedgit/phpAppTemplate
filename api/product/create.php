@@ -16,7 +16,7 @@ $product = new Product($db);
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-echo $data['location']
+echo $data['location'];
 
 //Product Query
 // $result = $product->create($data);
