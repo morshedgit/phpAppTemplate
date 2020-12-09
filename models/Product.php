@@ -55,6 +55,15 @@
             $this->height = htmlspecialchars(strip_tags($this->height));
             $this->location = htmlspecialchars(strip_tags($this->location));
 
+            //Bind data
+            $stmt->bindParams(':name',$this->name);
+            $stmt->bindParams(':id',$this->id);
+            $stmt->bindParams(':location',$this->location);
+            $stmt->bindParams(':width',$this->width);
+            $stmt->bindParams(':height',$this->height);
+            $stmt->bindParams(':length',$this->length);
+            $stmt->bindParams(':weight',$this->weight);
+
             //Execute query
             if($stmt->execute()){
                 return true;
