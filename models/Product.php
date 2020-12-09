@@ -45,6 +45,15 @@ class Product
         $this->height = htmlspecialchars(strip_tags($this->height));
         $this->location = htmlspecialchars(strip_tags($this->location));
 
+        $this->id??10;
+        $this->name??'Fork';
+        $this->location??'A4';
+        $this->width??10;
+        $this->length??10;
+        $this->height??10;
+        $this->weith??10;
+
+
         //create query
         $query = 'INSERT INTO ' . $this->table . ' (id,name,location,width,length,height,weight) 
             VALUES ('.$this->id.','.$this->name.','.$this->location.','.$this->width.','.$this->length.','.$this->height.','.$this->weight.')';
