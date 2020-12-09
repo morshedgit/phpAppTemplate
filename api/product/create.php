@@ -18,22 +18,28 @@ $product = new Product($db);
 //Get the raw posted data
 $data = json_decode(file_get_contents('php://input'), true);
 
+if($data->id || $data['id']){
 
-$product->id = $data->id?$data->id:$data['id'];
-$product->name = $data->name?$data->name:$data['name'];
-$product->width = $data->width?$data->width:$data['width'];
-$product->length = $data->length?$data->length:$data['length'];
-$product->height = $data->height?$data->height:$data['height'];
-$product->location = $data->location?$data->location:$data['location'];
-
-
-//Create Post
-if($product->create()){
-    echo json_encode(
-        array('message'=>'Product created')
-        // $product->create()
-    );
-}else{
+    $product->id = $data->id?$data->id:$data['id'];
+    $product->name = $data->name?$data->name:$data['name'];
+    $product->width = $data->width?$data->width:$data['width'];
+    $product->length = $data->length?$data->length:$data['length'];
+    $product->height = $data->height?$data->height:$data['height'];
+    $product->location = $data->location?$data->location:$data['location'];
+    
+    
+    //Create Post
+    if($product->create()){
+        echo json_encode(
+            array('message'=>'Product created')
+            // $product->create()
+        );
+    }else{
+        echo json_encode(
+            array('message'=>'Product not created')
+        );
+    }
+}else{    
     echo json_encode(
         array('message'=>'Product not created')
     );
