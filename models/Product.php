@@ -61,16 +61,16 @@ class Product
         $this->height = htmlspecialchars(strip_tags($this->height));
         $this->location = htmlspecialchars(strip_tags($this->location));
 
-        // $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (".$this->id.",'".$this->name."','".$this->location."',".$this->width.",".$this->length.",".$this->height.",".$this->weight.")";
-        $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (1000,'sadeq','home',20,30,40,50)";
+        $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (".$this->id.",'".$this->name."','".$this->location."',".$this->width.",".$this->length.",".$this->height.",".$this->weight.")";
+        // $query = "INSERT INTO product (id,name,location,width,length,height,weight) VALUES (1000,'sadeq','home',20,30,40,50)";
+        
+        printf($query);
         //Prepare
         $stmt = $this->conn->prepare($query);
 
         //Execute query
         if ($stmt->execute()) {
             return true;
-        }else{
-            return $query;
         }
 
         printf("Error: %s.\n", $stmt->error);

@@ -31,7 +31,7 @@ if($data->id){
     //Create Post
     if($product->create()){
         echo json_encode(
-            array('message'=>$product->create())
+            array('message'=>"Created")
             // $product->create()
         );
     }else{
