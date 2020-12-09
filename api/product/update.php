@@ -32,17 +32,17 @@ if($data->id){
     //Update Post
     if($product->update()){
         echo json_encode(
-            array('message'=>"Deleted")
+            array('message'=>"Product updated")
             // $product->create()
         );
     }else{
         echo json_encode(
-            array('message'=>'Product not deleted')
+            array('message'=>'Product not updated')
         );
     }
 }else{    
     echo json_encode(
-        array('message'=>'Product not removed')
+        array('message'=>'Product not updated')
     );
 }
 
